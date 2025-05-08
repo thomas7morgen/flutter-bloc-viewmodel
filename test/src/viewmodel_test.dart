@@ -4,15 +4,15 @@ import 'package:flutter_bloc_viewmodel/src/viewmodel.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 class MyViewModel extends ViewModel<void> {
-  bool _wasClicked = false;
+  bool _wasInitializeCalled = false;
 
   MyViewModel() : super(null);
 
-  bool get wasClicked => _wasClicked;
+  bool get wasInitializeCalled => _wasInitializeCalled;
 
   @override
   Future<void> init() async {
-    _wasClicked = true;
+    _wasInitializeCalled = true;
   }
 }
 
@@ -37,11 +37,14 @@ class MyWidget extends StatelessWidget {
 }
 
 void main() {
-  testWidgets('init is called', (WidgetTester tester) async {
-    final widget = MyWidget();
+  group('ViewModel', () {
+    testWidgets('init is called', (WidgetTester tester) async {
+      final widget = MyWidget();
 
-    await tester.pumpWidget(widget);
+      await tester.pumpWidget(widget);
 
-    expect(widget.viewModel.wasClicked, true);
+      expect(widget.viewModel.wasInitializeCalled, true);
+    });
+    ;
   });
 }
