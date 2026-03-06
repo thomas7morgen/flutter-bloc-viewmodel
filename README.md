@@ -16,7 +16,7 @@ Add the package to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  flutter_bloc_viewmodel: ^1.0.0
+  flutter_bloc_viewmodel: ^1.0.1
 ```
 
 ## Usage
