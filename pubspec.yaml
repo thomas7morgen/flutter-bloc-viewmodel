@@ -1,6 +1,6 @@
 name: flutter_bloc_viewmodel
 description: "ViewModel extension for flutter_bloc library"
-version: 1.0.0
+version: 1.0.1
 homepage:
 
 environment:

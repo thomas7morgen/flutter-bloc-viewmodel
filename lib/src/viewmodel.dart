@@ -6,6 +6,18 @@ typedef ViewModelCreate<T> = T Function(BuildContext context);
 abstract class ViewModel<State> extends Cubit<State> {
   ViewModel(super.initialState);
 
+  @protected
+  bool safeEmit(State newState) {
+    if (isClosed) return false;
+    super.emit(newState);
+    return true;
+  }
+
+  @override
+  void emit(State state) {
+    safeEmit(state);
+  }
+
   Future<void> init() async {
     // optional hook
   }
