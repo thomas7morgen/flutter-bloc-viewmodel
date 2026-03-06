@@ -6,7 +6,7 @@ A extension for [flutter_bloc](https://pub.dev/packages/flutter_bloc), which pro
 
 ## ✨ Features
 
-- Provides a `ViewModel` class with an `init` method
+- Provides a `ViewModel` class with an `init` and `safeEmit` method
 
 ---
 
